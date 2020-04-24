@@ -47,7 +47,7 @@ namespace Test1.Controllers
                 using (var com = new SqlCommand())
                 {
                     com.Connection = con;
-                    com.CommandText = "Select IdTask, Name, Description, Deadline, IdProject, IdTaskType, IdAssignedTo, IdCreatorIdCreator from Task Where IdCreator=@IdTeamMember;";
+                    com.CommandText = "Select IdTask, Name, Description, Deadline, IdProject, IdTaskType, IdAssignedTo, IdCreatorIdCreator from Task Where IdCreator=@IdTeamMember Order By IdProject desc;";
                    
                     con.Open();
                     var dr = com.ExecuteReader();
@@ -82,7 +82,7 @@ namespace Test1.Controllers
                 using (var com = new SqlCommand())
                 {
                     com.Connection = con;
-                    com.CommandText = "Select IdTask, Name, Description, Deadline, IdProject, IdTaskType, IdAssignedTo, IdCreator from Task Where IdAssignedTo=@IdTeamMember;";
+                    com.CommandText = "Select IdTask, Name, Description, Deadline, IdProject, IdTaskType, IdAssignedTo, IdCreator from Task Where IdAssignedTo=@IdTeamMember Order By IdProject desc;";
                    
                     con.Open();
                     var dr = com.ExecuteReader();
