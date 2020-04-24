@@ -15,7 +15,7 @@ namespace Test1.Controllers
     {
         // GET: api/TeamMember
         [HttpGet("{IdTeamMember}")]
-        public IActionResult GetTeamMember(string IdTeamMember, string orderBy)
+        public IActionResult GetTeamMember(string IdTeamMember)
         {
             var member = new TeamMember();
             var tasksByMember = new List<Models.Task>();
